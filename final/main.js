@@ -29,7 +29,7 @@ var plants = [
         "Description": "Pink, downward-facing flowers",
     },
     {
-        "Name": "Jalepeno",
+        "Name": "Jalapeno",
         "Type": "pepper",
         "Color": "Long, green peppers",
     },
