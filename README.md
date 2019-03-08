@@ -1,5 +1,5 @@
 
-## Hello to Javascript
+# Hello to JavaScript
 
 Part one of a three-part introduction to D3 at NICAR 2019
 
