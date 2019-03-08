@@ -325,8 +325,11 @@ Now for a little bit of JavaScript magic. We get this data by getting the object
 tableCell.innerHTML = bluth[i];
 ```
 
+🎉
 
-### Bonus round! Functions
+--------------
+
+## Bonus round! Functions
 
 We briefly talked about functions above. Let's talk more about them. To refresh: A function in JavaScript is a block of code that performs a task. A function won't happen unless we "call" it.
 
@@ -373,7 +376,7 @@ First thing, let's get our `index.html` file ready for a new table. Paste this j
 
 That sets up a new table with correct headers and a `<tbody>` with an ID of `plant-table` so our code knows what to look for.
 
-#### Your first function
+## Your first function
 
 We're going to transform our table making code into something we can use for whatever data we have. Swap out this code that we wrote earlier in our `main.js`:
 
@@ -414,11 +417,11 @@ tableMaker('plant-table', plants);
 
 Save, and look at your browser. Refresh your `index.html`. Did it work?
 
-### Wait, what just happened?
+## Wait, what just happened?
 
 Let's walk through line-by-line.
 
-#### Functions, parentheses and parameters, oh my 😬:
+## Functions, parentheses and parameters, oh my 😬:
 
 ```js
 function tableMaker(id, data) {
@@ -427,10 +430,10 @@ function tableMaker(id, data) {
 This first step is probably the most important part. It establishes that we're about to write a function, names the function (in this case, `tableMaker`) and tells the function what information to expect. We call whatever we put in the parentheses parameters. Before, when our code looked like this:
 
 ```js
-table = document.getElementById('bluth-table')
+var tbody = document.getElementById('bluth-table')
 
 bluths.forEach(function(obj) { 
-    var tableRow = table.insertRow(-1);
+    var tableRow = tbody.insertRow(-1);
     for(i in obj){
         var tableCell = tableRow.insertCell(-1);
         tableCell.innerHTML = obj[i];
@@ -442,10 +445,10 @@ We told it exactly what to expect. We told it to grab `bluth-table` and that we'
 
 ```js
 function tableMaker(id, data) {
-    table = document.getElementById(id)
+    var tbody = document.getElementById(id)
 
     data.forEach(function(obj) { 
-        var tableRow = table.insertRow(-1);
+        var tableRow = tbody.insertRow(-1);
         for(i in obj){
             var tableCell = tableRow.insertCell(-1);
             tableCell.innerHTML = obj[i];
@@ -483,8 +486,6 @@ We did a ton in this class. If you feel overwhelmed, that's totally okay. Here a
 - Functions
 
 These are the fundamentals of JavaScript, and now that you have a little familiarity with them- you're ready to start adding on to your programming toolkit.
-
-🎉
 
 ### Notes
 
