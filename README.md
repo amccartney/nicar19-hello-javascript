@@ -10,7 +10,7 @@ Go to the `class` folder and open up the file called `main.js` in your favorite 
 ```js
 console.log("Hello world!");
 ```
-You should see `Hello world!` printed in your console.
+You should see `Hello world!` printed in your console. If you do not, make sure to alert a coach so they can help you out. 
 
 ## Manipulating the DOM
 
