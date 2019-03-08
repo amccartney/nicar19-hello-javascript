@@ -41,9 +41,9 @@ console.log(myString); // cat
 
 ```
 
-You can then operate on these variables any way you like. 
+You can then operate on these variables any way you like. A couple examples:
 
-String concatenation
+#### String concatenation
 
 ```js
 
@@ -53,7 +53,7 @@ var lastName = "McCartney"
 console.log("My name is " + firstName + " " + lastName); // My name is Allison McCartney
 ```
 
-Mathematical operations
+#### Mathematical operations
 
 ```js
 var pi = 3.14159
@@ -64,7 +64,7 @@ var diameter = radius * 2 // 10
 var area = pi * Math.pow(radius, 2) // 78.53975
 ```
 
-### Cool, but aren't we here to make charts?
+## Cool, but aren't we here to make charts?
 
 Yes! Let's talk about data.
 
