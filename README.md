@@ -5,7 +5,7 @@ Part one of a three-part introduction to D3 at NICAR 2019
 
 ## Getting started
 
-Go to the `hello-javascript` folder and open up the file called `main.js` in your favorite text editor. Type the following into the file, hit save, then refresh your web page.
+Go to the `class` folder and open up the file called `main.js` in your favorite text editor. Type the following into the file, hit save, then refresh your web page.
 
 ```js
 console.log("Hello world!");
