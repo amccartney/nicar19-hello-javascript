@@ -12,6 +12,17 @@ console.log("Hello world!");
 ```
 You should see `Hello world!` printed in your console.
 
+## Manipulating the DOM
+
+JavaScript acts in the webpage by manipulating the Document Object Model (DOM). The DOM is complicated, but it's essentially the structure created by the HTML you write. 
+
+If you go into `index.html` you'll see that there's a `div` with `id = "hello"`. We can use JavaScript to select that `div` and change its contents.
+
+```js
+var container = document.getElementById("hello");
+container.innerHTML = "Hello!";
+```
+
 ## Variables
 
 Variables store data. They can store numbers, strings, objects, dates, booleans and the output of functions, among other things.
@@ -58,7 +69,7 @@ var area = pi * Math.pow(radius, 2) // 78.53975
 Yes! Let's talk about data.
 
 
-## Lists and objects
+## Arrays and objects
 
 The two most common ways you will store data in javascript is with arrays and objects. 
 
@@ -125,8 +136,8 @@ Say you have a spreadsheet that looks like this:
 
 The JavaScript equivalent of this spreadsheet would be:
 
-```js
-var bluths = [
+```json
+[
     {
         "name": "Michael",
         "job": "CEO",
@@ -211,7 +222,9 @@ bluths.forEach(function(bluth) {
 ```
 Save your file and hit refresh on your browser window. Check your console, and you should see the four names printed out on separate lines. 
 
-There are probably 10 different ways to write a `for` loop in JavaScript but this is my favorite because it's very explicit about what it's doing. It is also the best way to iterate through lists. Later, we will look at how to iterate through attributes of an object.
+There are probably 10 different ways to write a `for` loop in JavaScript but this is my favorite because it's very explicit about what it's doing. It is also the best way to iterate through lists. What it literally means is for each object in our object list, perform this function or code block. 
+
+Later, we will look at how to iterate through attributes of an object.
 
 
 ## *If* statements
@@ -229,7 +242,7 @@ bluths.forEach(function(bluth) {
 })
 ```
 
-## Put it all together 
+## Putting it all together 
 
 So far we've learned what JavaScript and the DOM are, variables, objects and loops. This is an extremely narrow snippet of what JavaScript can do, but these are basic concepts that you'll use all the time as you dive deeper into programming. 
 
@@ -269,15 +282,15 @@ bluths.forEach(function(bluth) {
 });
 ```
 
-This doen't look like a ton of code, but trust me, it's doing *a lot*. Save and refresh your page. You should see a table there with all of the Bluths. Let's walk through what happened step-by-step.
+This doesn't look like a ton of code, but trust me, it's doing *a lot*. Save and refresh your page. You should see a table there with all of the Bluths. Let's walk through what happened step-by-step.
 
-First, we create a table variable. This is so we can talk to it later when we want to add our bluths to it.
+First, we create a `tbody` variable. This grabs the `tbody` element with the `bluth-table` ID so we can talk to it later when we want to add our table rows to it.
 
 ```js
-table = document.getElementById('bluth-table')
+var tbody = document.getElementById('bluth-table')
 ```
 
-Next, we start our for loop. You'll notice that this looks different than the for loop we used earlier. There are probably 10 different ways to write a for loop in JavaScript and this is another one of my favorites because it's very explicit about what it's doing. For each object in our object list, perform this function or code block. We'll talk more on functions in a bit- for now just know that functions are blocks of code that perform a task.
+This line starts the for loop just like we did above. For each item in the list of bluths, perform this function (task) on that item.
 
 ```js
 bluths.forEach(function(bluth) { 
@@ -285,16 +298,18 @@ bluths.forEach(function(bluth) {
 Then we create another variable `tableRow`. This creates a new line for each person.
 
 ```js
-var tableRow = table.insertRow(-1);
+var tableRow = tbody.insertRow(-1);
 ```
 
-Wat. Another `for` loop *within* a for loop?! You betcha another `for` loop! This time we're looping through the attributes within our pet object. So the first time this loop runs it's grabbing the name, the job, the number of children, and the quote.
+Wat. Another `for` loop *within* a for loop?! You betcha another `for` loop! And this one looks different because instead of looping through items in a list, this time we're looping through the attributes within our object. 
+
+So the first time this loop runs it's grabbing the name, the job, the number of children, and the quote.
 
 ```js
 for (i in bluth) {
 ```
 
-For all of the pet attributes we're looping through, we make another variable for the table cells where our pet data points will live. This line of code tells the DOM to find where we made our table row in the first loop a couple of steps back, and to insert a new table cell. 
+For all of the attributes we're looping through, we make another variable for the table cells where our bluth data points will live. This line of code tells the DOM to find where we made our table row in the first loop a couple of steps back, and to insert a new table cell. 
 
 That `(-1)` is just special to this particular `insertCell()` method and means that we want the table cell to be added to the end. This is something I'd never seen before and had to Google. We're learning together!
 
@@ -302,7 +317,9 @@ That `(-1)` is just special to this particular `insertCell()` method and means t
 var tableCell = tableRow.insertCell(-1);
 ```
 
-This is where we tell our table what exactly we want to add. First, we tell the DOM to grab the `tableCell` we created a second ago. Next, that `innerHTML` preps it for whatever text or HTML snippet we wnant to stick in there. In this case, we want to add the data in our object. Now for a little bit of JavaScript magic. We get this data by getting the object we're looping and telling it to grab the data inside with `[i]`. Square brackets next to an object is a JavaScript convention that indicates we want to break into that object and grab the data inside.
+This is where we tell our table what exactly we want to add. First, we tell the DOM to grab the `tableCell` we created a second ago. Next, that `innerHTML` preps it for whatever text or HTML snippet we want to stick in there. In this case, we want to add the data in our object. 
+
+Now for a little bit of JavaScript magic. We get this data by getting the object we're looping and telling it to grab the data inside with `[i]`. Square brackets next to an object is a JavaScript convention that indicates we want to break into that object and grab the data inside.
 
 ```js
 tableCell.innerHTML = bluth[i];
