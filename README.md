@@ -5,12 +5,13 @@ Part one of a three-part introduction to D3 at NICAR 2019
 
 ## Getting started
 
-Go to the `class` folder and open up the file called `main.js` in your favorite text editor. Type the following into the file, hit save, then refresh your web page.
+1. Go to the `class` folder and pull `index.html` into your web brower. You should see "Intro to Javascript" at the top of the page. 
+2. Open up the file called `main.js` in your favorite text editor. Type the following into the file, hit save, then refresh your web page.
 
 ```js
 console.log("Hello world!");
 ```
-You should see `Hello world!` printed in your console. If you do not, make sure to alert a coach so they can help you out. 
+3. Right click anywhere on the page and select "Inspect element" then navigate to the "console." You should see `Hello world!` printed there. If you do not, make sure to alert a coach so they can help you out. 
 
 ## Manipulating the DOM
 
